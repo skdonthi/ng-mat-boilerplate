@@ -2,3 +2,16 @@ mat-grid-tile {
   background: lightblue;
   border-radius: 0.375rem;
 }
+
+::ng-deep .mdc-list-item__primary-text {
+  font-family: "Caros Soft" !important;
+}
+
+::ng-deep .mat-grid-tile-content {
+  align-items: baseline !important;
+  justify-content: left !important;
+}
+
+::ng-deep .mdc-list-item.mdc-list-item--with-one-line {
+  height: 32px !important;
+}
