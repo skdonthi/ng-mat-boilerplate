@@ -7,4 +7,8 @@ body {
 html {
   --mat-toolbar-title-text-font: $font_family, sans-serif !important;
   //--mdc-list-list-item-one-line-container-height: 0 !important;
+  --mat-form-field-container-text-font: $font_family, sans-serif !important;
+  --mdc-filled-text-field-label-text-font: $font_family, sans-serif !important;
+  --mdc-outlined-text-field-label-text-font: $font_family, sans-serif !important;
+  --mat-select-trigger-text-font: : $font_family, sans-serif !important;
 }

@@ -1,20 +1,22 @@
-<mat-toolbar>
-  <button mat-icon-button aria-label="menu icon" (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
+<mat-toolbar class="header">
   <span>ng-mat App</span>
-  <span class="spacer"></span>
-  <button mat-icon-button class="favorite-icon" aria-label="heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
+  <mat-form-field>
+    <mat-select [(ngModel)]="selectedValue" name="food">
+      <mat-grid-list cols="3" rowHeight="2:1">
+        @for (food of foods; track food; let i = $index, e = $even, o = $odd) {
+        <mat-grid-tile>
+          <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
+        </mat-grid-tile>
+        }
+      </mat-grid-list>
+    </mat-select>
+  </mat-form-field>
+
   <button mat-icon-button aria-label="share icon">
-    <mat-icon>share</mat-icon>
+    <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>
-<mat-drawer-container class="side-container" [hasBackdrop]="false">
-    <mat-drawer #drawer mode="side" opened>Drawer content (Toggled)</mat-drawer>
-  <mat-drawer-content>
-    <router-outlet />
-  </mat-drawer-content>
-</mat-drawer-container>
 
+<main>
+  <router-outlet />
+</main>

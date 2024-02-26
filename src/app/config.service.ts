@@ -4,8 +4,8 @@ import { lastValueFrom } from 'rxjs';
 import { StorageService } from './storage.service';
 
 export function configFactory(): () => Promise<XiConfig> {
-  const appConfigService = inject(ConfigService);
-  return async () => await appConfigService.getConfig();
+  const service = inject(ConfigService);
+  return async () => await service.getConfig();
 }
 
 @Injectable({
