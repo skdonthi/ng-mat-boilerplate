@@ -1,16 +1,23 @@
 <div style="margin-top: 1rem"></div>
 <mat-grid-list
   cols="4"
-  rowHeight="2:1"
+  rowHeight="6:4"
   gutterSize="1rem"
   style="margin-left: 1rem; margin-right: 1rem"
 >
   <mat-grid-tile class="mat-elevation-z3">
-    <mat-list role="list">
-      <mat-list-item role="listitem">Item 1</mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>
+    <xif-card>
+      <div class="card-title">Shiva</div>
+      <div class="card-sub-title">Engineer</div>
+      <div class="card-content">
+        <p>{{ apiUrl }}</p>
+        <p>This card indeterminates progress bar.</p>
+      </div>
+      <div class="card-actions">
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </div>
+    </xif-card>
   </mat-grid-tile>
   <mat-grid-tile class="mat-elevation-z3">
     <mat-list role="list">
