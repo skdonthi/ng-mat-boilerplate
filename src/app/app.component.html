@@ -1,6 +1,6 @@
-<mat-toolbar class="header" style="position: sticky">
+<mat-toolbar class="header">
   <span>ng-mat App</span>
-
+  <span class="spacer"></span>
   <form class="example-form">
     <mat-form-field class="example-full-width">
       <input
@@ -10,7 +10,7 @@
         [formControl]="myControl"
         [matAutocomplete]="auto"
       />
-      <mat-icon matSuffix>arrow_drop_down</mat-icon>
+      <!-- <mat-icon matSuffix>arrow_drop_down</mat-icon> -->
       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
         @for (option of filteredOptions | async; track option) {
         <mat-option [value]="option">{{ option }}</mat-option>

@@ -37,17 +37,7 @@ interface Food {
 export class AppComponent {
   title = 'ng-mat-boilerplate';
   myControl = new FormControl('One');
-  options: string[] = [
-    'One',
-    'Two',
-    'Three',
-    'One',
-    'Two',
-    'Three',
-    'One',
-    'Two',
-    'Three',
-  ];
+  options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
 
   ngOnInit() {
