@@ -1,18 +1,25 @@
-<mat-toolbar class="header">
+<mat-toolbar class="header" style="position: sticky">
   <span>ng-mat App</span>
-  <mat-form-field>
-    <mat-select [(ngModel)]="selectedValue" name="food">
-      <mat-grid-list cols="3" rowHeight="2:1">
-        @for (food of foods; track food; let i = $index, e = $even, o = $odd) {
-        <mat-grid-tile>
-          <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
-        </mat-grid-tile>
-        }
-      </mat-grid-list>
-    </mat-select>
-  </mat-form-field>
 
-  <button mat-icon-button aria-label="share icon">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        aria-label="Number"
+        matInput
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-icon matSuffix>arrow_drop_down</mat-icon>
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        @for (option of filteredOptions | async; track option) {
+        <mat-option [value]="option">{{ option }}</mat-option>
+        }
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+  <button mat-icon-button aria-label="user icon">
     <mat-icon>account_circle</mat-icon>
   </button>
 </mat-toolbar>

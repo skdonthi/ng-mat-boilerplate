@@ -1,26 +1,21 @@
 .header {
   display: flex;
-  position: sticky !important;
   justify-content: space-between;
 
   ::ng-deep .mdc-line-ripple {
     display: none;
   }
 
-  ::ng-deep .mat-mdc-select-trigger {
-    width: 30% !important;
-    margin-left: 30px !important;
-    margin-top: 10px;
+  .example-form {
+    max-width: 101px;
+    width: 100%;
   }
 
-  ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-    margin: 0 20px !important;
-    &:hover {
-      background-color: #fff !important;
-    }
+  .example-full-width {
+    width: 100%;
   }
 
-  ::ng-deep .mat-mdc-option .mdc-list-item {
-    font-size: small;
+  ::ng-deep .mdc-text-field--filled {
+    margin-top: 15px;
   }
 }
