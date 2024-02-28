@@ -1,10 +1,30 @@
 .header {
-  display: flex;
-  position: sticky !important;
-  justify-content: space-between;
+  //display: flex;
+  //justify-content: space-between;
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
 
   ::ng-deep .mdc-line-ripple {
     display: none;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-form {
+    max-width: 101px;
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }
+
+  ::ng-deep .mdc-text-field--filled {
+    margin-top: 15px;
   }
 
   ::ng-deep .mat-mdc-select-trigger {
