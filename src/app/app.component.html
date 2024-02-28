@@ -1,9 +1,22 @@
 <mat-toolbar class="header">
   <span>ng-mat App</span>
+  <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+<mat-menu #animals="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+  <button mat-menu-item>Invertebrates</button>
+</mat-menu>
+
+<mat-menu #vertebrates="matMenu">
+  <button mat-menu-item>Fishes</button>
+  <button mat-menu-item>Amphibians</button>
+  <button mat-menu-item>Reptiles</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu>
   <mat-form-field>
     <mat-select [(ngModel)]="selectedValue" name="food">
       <mat-grid-list cols="3" rowHeight="2:1">
-        @for (food of foods; track food; let i = $index, e = $even, o = $odd) {
+        @for (food of foods; track food; let i = $index) {
         <mat-grid-tile>
           <mat-option [value]="food.value">{{ food.viewValue }}</mat-option>
         </mat-grid-tile>

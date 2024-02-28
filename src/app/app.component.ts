@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 
 interface Food {
   value: string;
@@ -25,6 +26,7 @@ interface Food {
     MatSelectModule,
     FormsModule,
     MatGridListModule,
+    MatMenuModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
