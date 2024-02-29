@@ -10,6 +10,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { Observable, map, startWith } from 'rxjs';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { ThemePalette } from '@angular/material/core';
 
 interface Food {
   value: string;
@@ -31,7 +33,8 @@ interface Food {
     MatAutocompleteModule,
     ReactiveFormsModule,
     AsyncPipe,
-    MatMenuModule
+    MatMenuModule,
+    MatSlideToggleModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -41,6 +44,10 @@ export class AppComponent {
   myControl = new FormControl('One');
   options: string[] = ['One', 'Two', 'Three'];
   filteredOptions!: Observable<string[]>;
+
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
