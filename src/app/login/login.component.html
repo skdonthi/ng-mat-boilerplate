@@ -1,0 +1,47 @@
+<div class="login-screen">
+  <div class="login-card">
+    <div class="card shadow">
+      <div class="card-header p-2">
+
+      </div>
+      <div class="card-body p-4">
+        <p class="">Welcome to Dashboard</p>
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              formControlName="username"
+              [ngClass]="username?.invalid && (username?.dirty || username?.touched) ? 'is-invalid' : ''"
+            />
+            <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="text-danger">
+              <div *ngIf="username?.errors?.['required']">Username is required.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              formControlName="password"
+              [ngClass]="password?.invalid && (password?.dirty || password?.touched) ? 'is-invalid' : ''"
+            />
+            <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger">
+              <div *ngIf="password?.errors?.['required']">Password is required.</div>
+            </div>
+          </div>
+
+          <p *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+          </p>
+
+          <div>
+            <button type="submit" class="btn btn-sm btn-primary m-0" [disabled]="!form.valid">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
